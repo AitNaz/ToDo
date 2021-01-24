@@ -1,17 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoTo</title>
-    <link rel="stylesheet" href="./styles/style.css"/>
-    <link rel="stylesheet" href="./styles/checkbox.css"/>
+    <title>ToDo</title>
+    <!-- <link rel="stylesheet" href="./styles/style.css"/> -->
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}"/>
+    <!-- <link rel="stylesheet" href="./styles/checkbox.css"/> -->
+    <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}"/>
 </head>
 <body>
     <section>
 
         <div class="create_container">
-        <input class="create_input" type="text" placeholder="Напишите сюда новую задачу"/>
+        <input class="create_input" type="text" placeholder="Новая задача"/>
         <button class="create_button">Добавить</button>
         </div>
 
