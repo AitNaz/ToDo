@@ -76,4 +76,10 @@ def books_detail(request, id):
     mybook = Bookhouse.objects.filter(id=id)
     return render(request, "books_detail.html", {"books_detail": mybook})
 
+def close_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_closed = not todo.is_closed
+    todo.save
+    return redirect(test)
+
 
