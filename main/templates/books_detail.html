@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
+    <title>Bookhouse-book</title>
+</head>
+<body>
+    <style>
+        body{margin: 50px;}
+        div{width: 50%; margin: 0 auto;}
+        #title{text-align: center; color: rgb(69, 171, 179); text-transform: uppercase;}
+        .genre, a{font-style: italic;}
+    </style>
+    {% for mybook in books_detail %}
+        <div>
+            <h3 id="title">{{ mybook.title }}<h3>
+                <br><br>
+            <p>{{mybook.subtitle}}</p>
+            <br><br>
+            <p>Цена: {{mybook.price}}сом</p>
+            <br><br>
+            <p>Жанр: <span class="genre"> {{mybook.genre}}</span></p>
+            <br><br>
+            <p>Дата издания: {{mybook.year}}</p>
+            <br><br>
+            <p>{{mybook.description}}</p>
+            <br><br>
+            <a href="javascript:history.back()">На главную страницу</a>
+        </div>              
+    {% endfor %}      
+</body>
+</html>

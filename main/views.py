@@ -55,4 +55,25 @@ def add_book(request):
     book.save()
     return redirect(books)
 
+def delete_books(request, id):
+    book = Bookhouse.objects.get(id=id)
+    book.delete()
+    return redirect(books)
+
+def mark_books(request, id):
+    book = Bookhouse.objects.get(id=id)
+    book.is_favorite = True
+    book.save()
+    return redirect(books)
+
+def unmark_books(request, id):
+    book = Bookhouse.objects.get(id=id)
+    book.is_favorite = False
+    book.save()
+    return redirect(books)
+
+def books_detail(request, id):
+    mybook = Bookhouse.objects.filter(id=id)
+    return render(request, "books_detail.html", {"books_detail": mybook})
+
 
